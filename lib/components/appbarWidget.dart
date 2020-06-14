@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utilities/theme_style.dart';
-import '../screens/notifications.dart';
+import '../screens/videoPlayScreen.dart';
 class Appbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,15 +10,16 @@ class Appbar extends StatelessWidget {
         ThemeStyle.logo,
         IconButton(
           icon:Icon(Icons.notifications,size: 30.0,),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: 
-                  (context) => NotifiactionPage()
-              ),
-            );
-          }
+          onPressed: () {},
+          // onPressed: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: 
+          //         (context) => HomeScreen()
+          //     ),
+          //   );
+          // }
         )
       ]
     );

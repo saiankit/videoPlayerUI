@@ -11,6 +11,7 @@ class _VideoListState extends State<VideoList> {
     return Expanded(
       child: ListView(
         children: <Widget>[
+          
           VideoCard(imageURL:1,videoName: 'Fibonacci Series is the best',videoTime: '3:30',),
           VideoCard(imageURL:2,videoName: 'Best Villa in the World',videoTime: '3:30',),
           VideoCard(imageURL:3,videoName: 'Paris at it best',videoTime: '3:30',),
