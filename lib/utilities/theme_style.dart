@@ -16,4 +16,14 @@ class ThemeStyle {
     fontSize: 30,
     fontFamily: 'futura'
   );
+  static final RichText logo = RichText(
+          text: TextSpan(
+          text: 'G', 
+          style: ThemeStyle.appBarLabelG,
+          children: <TextSpan>[
+          TextSpan(text: 'NN',style: ThemeStyle.appBarLabelN),
+          TextSpan(text: ' TV Telugu',style: ThemeStyle.appBarLabelText),
+          ],
+        ),
+  );
 }

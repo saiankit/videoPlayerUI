@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:videoPlayerUI/utilities/theme_style.dart';
-
+import 'components/appbarWidget.dart';
+import 'components/videoList.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -24,27 +24,11 @@ class _MyHomePageState extends State<MyHomePage> {
   return Scaffold(
       body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top:20.0,left: 20.0,bottom: 8.0,right: 8.0),
+            padding: const EdgeInsets.only(top:15.0,left: 15.0,right: 15.0),
             child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  RichText(
-                    text: TextSpan(
-                    text: 'G', 
-                    style: ThemeStyle.appBarLabelG,
-                    children: <TextSpan>[
-                    TextSpan(text: 'NN',style: ThemeStyle.appBarLabelN),
-                    TextSpan(text: ' TV Telugu',style: ThemeStyle.appBarLabelText),
-                    ],
-                  ),
-                  ),
-                  IconButton(
-                    icon:Icon(Icons.notifications),
-                    onPressed: () {},
-                  )
-                  ]
-              ),          
+              Appbar(),
+              VideoList() 
             ],
         ),
       ),
