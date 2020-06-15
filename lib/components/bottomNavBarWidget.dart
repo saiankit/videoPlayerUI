@@ -1,26 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:videoPlayerUI/main.dart';
-import '../screens/filmDhaba.dart';
-import '../screens/foodandHealth.dart';
-import '../screens/politics.dart';
+
 class BottomNavBar extends StatefulWidget {
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
-  List<Widget> _widgetOptions = <Widget>[
-    MyHomePage(),
-    FilmDhaba(),
-    FoodAndHealth(),
-    Politics()
-  ];
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: _selectedIndex,
+      elevation: 0,
+      currentIndex: selectedIndex,
       showSelectedLabels: true,
       showUnselectedLabels: false,
       items: [
@@ -29,7 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icons.home,
             color: Colors.grey,
           ),
-          title: Text('Home'),
+          title: Text('Home',style: TextStyle(color: Colors.black),),
           activeIcon: Icon(
             Icons.home,
             color: Colors.black,
@@ -40,7 +31,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icons.movie,
             color: Colors.grey,
           ),
-          title: Text('Film'),
+          title: Text('Film',style: TextStyle(color: Colors.black),),
           activeIcon: Icon(
             Icons.movie,
             color: Colors.black,
@@ -51,7 +42,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             Icons.local_hospital,
             color: Colors.grey,
           ),
-          title: Text('Health'),
+          title: Text('Health',style: TextStyle(color: Colors.black),),
           activeIcon: Icon(
             Icons.local_hospital,
             color: Colors.black,
@@ -59,16 +50,21 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(
-            Icons.home,
+            Icons.poll,
             color: Colors.grey,
           ),
-          title: Text('Politics'),
+          title: Text('Politics',style: TextStyle(color: Colors.black),),
           activeIcon: Icon(
-            Icons.home,
+            Icons.poll,
             color: Colors.black,
           )
         )
       ],
+      onTap: (index) {
+        setState(() {
+          selectedIndex = index;
+        });
+      },
     );
   }
 }

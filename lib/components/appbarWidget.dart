@@ -6,9 +6,13 @@ class Appbar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
+        IconButton(
+          icon: Icon(Icons.menu,size: 20.0,),
+          onPressed: () {},
+        ),
         ThemeStyle.logo,
         IconButton(
-          icon:Icon(Icons.notifications,size: 30.0,),
+          icon:Icon(Icons.notifications,size: 20.0,),
           onPressed: () {},
           // onPressed: () {
           //   Navigator.push(

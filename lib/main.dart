@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'components/appbarWidget.dart';
+import 'components/bottomNavBarWidget.dart';
 import 'components/videoList.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,7 +24,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    VideoList();
   }
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
             children: <Widget>[
               Appbar(),
-              VideoList() 
+              VideoList(),
+              BottomNavBar()
             ],
         ),
       ),

@@ -19,32 +19,28 @@ class _VideoListState extends State<VideoList> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-          child: Center(
-            child: Expanded(
-              child: Container(
-                height:750.0,
-                child: FutureBuilder(
-                  future: fetchAlbum(),
-                  builder: (BuildContext context, AsyncSnapshot snapshot){
-                    if(snapshot.data == null){
-                      return Center(
-                        child: Container(
-                          child:CircularProgressIndicator()
-                        ),
-                      );
-                    }else{
-                    return ListView.builder(
-                      itemCount: snapshot.data.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return VideoCard(imageURL:snapshot.data[index].thumbnail,videoID:snapshot.data[index].videoID,videoName:snapshot.data[index].title);
-                      }
-                    );}
-                  },
-                )
-        ),
-            ),
+    return Expanded(
+        child: Container(
+          height:MediaQuery.of(context).size.height,
+          child: FutureBuilder(
+            future: fetchAlbum(),
+            builder: (BuildContext context, AsyncSnapshot snapshot){
+              if(snapshot.data == null){
+    return Center(
+      child: Container(
+        child:CircularProgressIndicator()
       ),
     );
+              }else{
+              return ListView.builder(
+    itemCount: snapshot.data.length,
+    itemBuilder: (BuildContext context, int index) {
+      return VideoCard(imageURL:snapshot.data[index].thumbnail,videoID:snapshot.data[index].videoID,videoName:snapshot.data[index].title);
+    }
+              );}
+            },
+          )
+        ),
+      );
   }
 }

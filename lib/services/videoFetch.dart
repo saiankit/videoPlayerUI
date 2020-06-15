@@ -1,13 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import '../utilities/keys.dart';
 import 'package:http/http.dart' as http;
 import '../models/video_model.dart';
 
-var apiURL = 'https://www.googleapis.com/youtube/v3/search?key=$authKey&channelId=$channelID&part=snippet,id&order=date&maxResults=100';
+var apiURL = 'https://www.googleapis.com/youtube/v3/search?key=$authKey&channelId=$mainChannelID&part=snippet,id&order=date&maxResults=20';
 Future<List<Video>> fetchAlbum() async {
+  var jsonData;
+  try{
   final response = await http.get(apiURL);
-  var jsonData = json.decode(response.body);
+  jsonData = json.decode(response.body);
+  } on SocketException {
+     print('No internet Connection');
+  }
+  print(jsonData);
   List<Video> videoList =[];
   var modifiedData = jsonData['items'];
   for (var v in modifiedData ) {
@@ -15,5 +22,4 @@ Future<List<Video>> fetchAlbum() async {
     videoList.add(video);
   }
   return videoList;
-  // print(videoList.length);
 }
