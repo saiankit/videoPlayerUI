@@ -1,25 +1,49 @@
+import 'package:videoPlayerUI/widgets/videoCard.dart';
+import '../services/videoFetch.dart';
 import 'package:flutter/material.dart';
-import '../widgets/videoCard.dart';
+import '../models/video_model.dart';
+
 class VideoList extends StatefulWidget {
+  VideoList({Key key}) : super(key: key);
   @override
   _VideoListState createState() => _VideoListState();
 }
 
 class _VideoListState extends State<VideoList> {
+  Future<List<Video>> futureAlbum;
+  @override
+  void initState() {
+    super.initState();
+    futureAlbum = fetchAlbum();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        children: <Widget>[
-          
-          VideoCard(imageURL:1,videoName: 'Must Watch: COVID-19 Survivor Explains His Medication | Coronavirus Survivor Daily Routine | GNN TV',videoID:'uFoMtA3s9hU'),
-          VideoCard(imageURL:2,videoName: 'Mashup Princess Satya Yamini Musical Fun | Singer Satya Yamini Latest Songs | GNN TV Telugu',videoID:'YwAlIg0qWNc'),
-          VideoCard(imageURL:3,videoName: 'Jr NTR Inspirational Words About Win and Lose | Jr NTR as Brand Ambassador for IPL 2018 | E3 Talkies',videoID:'y2sb0vH_R2U'),
-          VideoCard(imageURL:4,videoName: 'SATC Live From Living Room | GNN TV TELUGU',videoID:'8xp2zSzOkSU'),
-          VideoCard(imageURL:5,videoName: 'RGV about Balakrishna, Chiranjeevi and Mia Malkova - TV9',videoID:'5vBkD4eBa7k'),
-          VideoCard(imageURL:6,videoName: 'No one taking care: Corona Patient Emotional Video from Gandhi Hospital | V6',videoID:'jCwjCBVlBAE'),
-          VideoCard(imageURL:7,videoName: 'Indo-Nepal Border Open Firing: PM Modi Strategic Silence Over India Nepal Border Tensions? | GNN TV',videoID:'esS9aidx-K8')
-        ],
+    return Material(
+          child: Center(
+            child: Expanded(
+              child: Container(
+                height:750.0,
+                child: FutureBuilder(
+                  future: fetchAlbum(),
+                  builder: (BuildContext context, AsyncSnapshot snapshot){
+                    if(snapshot.data == null){
+                      return Center(
+                        child: Container(
+                          child:CircularProgressIndicator()
+                        ),
+                      );
+                    }else{
+                    return ListView.builder(
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return VideoCard(imageURL:snapshot.data[index].thumbnail,videoID:snapshot.data[index].videoID,videoName:snapshot.data[index].title);
+                      }
+                    );}
+                  },
+                )
+        ),
+            ),
       ),
     );
   }

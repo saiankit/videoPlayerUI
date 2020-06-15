@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:videoPlayerUI/screens/videoPlayScreen.dart';
 
 class VideoCard extends StatefulWidget {
-  final int imageURL;
+  final String imageURL;
   final String videoName;
   final String videoID;
   VideoCard({this.imageURL,this.videoName,this.videoID});
@@ -18,7 +18,7 @@ class _VideoCardState extends State<VideoCard> {
           context,
           MaterialPageRoute(
             builder: 
-              (context) => VideoPlayScreen(videoName:widget.videoName,imageURL:widget.imageURL,videoID: widget.videoID,)
+              (context) => VideoPlayScreen(videoName:widget.videoName,videoID: widget.videoID,)
               ),
             );
       },
@@ -37,7 +37,7 @@ class _VideoCardState extends State<VideoCard> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.0),
                       image: DecorationImage(
-                        image : AssetImage('assets/images/${widget.imageURL}.jpg'),
+                        image : NetworkImage('${widget.imageURL}'),
                         fit: BoxFit.fill
                         ),
                     ),

@@ -16,14 +16,53 @@ class ThemeStyle {
     fontSize: 30,
     fontFamily: 'futura'
   );
-  static final RichText logo = RichText(
-          text: TextSpan(
-          text: 'G', 
-          style: ThemeStyle.appBarLabelG,
-          children: <TextSpan>[
-          TextSpan(text: 'NN',style: ThemeStyle.appBarLabelN),
-          TextSpan(text: ' TV Telugu',style: ThemeStyle.appBarLabelText),
-          ],
+  // static final RichText logo = RichText(
+  //         text: TextSpan(
+  //         text: 'G', 
+  //         style: ThemeStyle.appBarLabelG,
+  //         children: <TextSpan>[
+  //         TextSpan(text: 'NN',style: ThemeStyle.appBarLabelN),
+  //         TextSpan(text: ' TV Telugu',style: ThemeStyle.appBarLabelText),
+  //         ],
+  //       ),
+  // );
+  static final Container logo = Container(
+    child: Row(
+      children: <Widget>[
+        Container(
+          color: Color(0xFFE30401),
+          child: Text(
+            'G',
+            style: TextStyle(
+              fontFamily: 'futura',
+              fontSize: 30.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),),
         ),
+        Container(
+          color: Color(0xFF00267F),
+          child: Text(
+            'NN',
+            style: TextStyle(
+              fontFamily: 'futura',
+              fontSize: 30.0,
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),
+            ),
+        ),
+        Container(
+          child: Text(
+            ' News Telugu',
+            style: TextStyle(
+              fontFamily: 'futura',
+              fontSize: 30.0,
+              color: Colors.black,
+            ),
+          ),
+        )
+      ],
+    ),
   );
 }

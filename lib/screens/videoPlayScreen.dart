@@ -26,10 +26,10 @@ class _VideoPlayScreenState extends State<VideoPlayScreen> {
             child: Container(
         decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.0),
-                  image: DecorationImage(
-                    image : AssetImage('assets/images/${widget.imageURL}.jpg'),
-                    fit: BoxFit.fill
-                    ),
+                  // image: DecorationImage(
+                  //   image : AssetImage('assets/images/${widget.imageURL}.jpg'),
+                  //   fit: BoxFit.fill
+                  //   ),
                 ),
         child: YoutubePlayer(
           controller: _controller,

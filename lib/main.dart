@@ -20,6 +20,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+    super.initState();
+    VideoList();
+  }
+  @override
   Widget build(BuildContext context) {
   return Scaffold(
       body: SafeArea(
