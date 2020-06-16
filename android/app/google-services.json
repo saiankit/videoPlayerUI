@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "77896315609",
+    "firebase_url": "https://nimble-host-280305.firebaseio.com",
+    "project_id": "nimble-host-280305",
+    "storage_bucket": "nimble-host-280305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77896315609:android:942548161c76c49f9004c8",
+        "android_client_info": {
+          "package_name": "com.example.videoPlayerUI"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77896315609-anhu8je90sbagb5qedumdleidlqof2ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR6laEfny-P7TAXwWspx9BCsDzeZZZuc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77896315609-anhu8je90sbagb5qedumdleidlqof2ls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:videoPlayerUI/components/drawer.dart';
 import '../utilities/theme_style.dart';
 class Appbar extends StatelessWidget {
   @override
@@ -13,16 +14,9 @@ class Appbar extends StatelessWidget {
         ThemeStyle.logo,
         IconButton(
           icon:Icon(Icons.notifications,size: 20.0,),
-          onPressed: () {},
-          // onPressed: () {
-          //   Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: 
-          //         (context) => VideoList()
-          //     ),
-          //   );
-          // }
+          onPressed: () {
+            MainDrawer();
+          },
         )
       ]
     );

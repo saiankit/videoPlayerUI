@@ -56,7 +56,7 @@ class _VideoCardState extends State<VideoCard> {
                       Stack(
                         children:[
                         Container(
-                          height: 80.0,
+                          height: 70.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(15.0),
