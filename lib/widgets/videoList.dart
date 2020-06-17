@@ -17,8 +17,13 @@ class _ListGeneratorState extends State<ListGenerator> {
   
   @override
   void initState() {
+    if(widget.dbCollectionName == 'devotionalChannel'|| widget.dbCollectionName == 'filmDhaba' ) {
     VideoFetch(channelID: widget.channelID,dbCollectionName: widget.dbCollectionName).fetchVideos();
     VideoFetch(channelID: widget.channelID,dbCollectionName: widget.dbCollectionName).completeFetch();
+    }
+    else {
+      VideoFetch(channelID: widget.channelID,dbCollectionName: widget.dbCollectionName).completeFetch();
+    }
     super.initState();
   }
   final _firestore = Firestore.instance;
