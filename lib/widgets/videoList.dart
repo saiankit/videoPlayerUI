@@ -1,5 +1,3 @@
-
-
 import 'package:videoPlayerUI/services/videoFetch.dart';
 import 'package:videoPlayerUI/widgets/videoCard.dart';
 import 'package:flutter/material.dart';

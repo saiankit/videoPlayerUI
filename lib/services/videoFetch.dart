@@ -13,10 +13,10 @@ final String dbCollectionName;
 VideoFetch({this.channelID,this.dbCollectionName});
 var _firestore = Firestore.instance;
 Future completeFetch() async{
-  var next_page_token = '';
-  for(var i = 1;i < 40 ; i++)
+  var nextPageToken = '';
+  for(var i = 1;i < 100 ; i++)
   {
-  var apiURL = 'https://www.googleapis.com/youtube/v3/search?key=$authKey&channelId=$channelID&part=snippet,id&order=date&maxResults=50&pageToken=$next_page_token';
+  var apiURL = 'https://www.googleapis.com/youtube/v3/search?key=$authKey&channelId=$channelID&part=snippet,id&order=date&maxResults=50&pageToken=$nextPageToken';
   var jsonData;
   try{
   final response = await http.get(apiURL);
@@ -49,7 +49,7 @@ Future completeFetch() async{
               }
             );
           }
-  next_page_token = jsonData['nextPageToken'];
+  nextPageToken = jsonData['nextPageToken'];
  var len =  _firestore.collection(dbCollectionName).getDocuments().then((QuerySnapshot docs) => 
   docs.documents.length
   );
