@@ -23,10 +23,10 @@ class _VideoCardState extends State<VideoCard> {
             );
       },
       child: Container(
-
         child: Column(
           children: <Widget>[
             Card(
+              elevation: 10.0,
               color: Colors.black,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0)
@@ -67,7 +67,8 @@ class _VideoCardState extends State<VideoCard> {
                           child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Expanded(child: Text(widget.videoName,style: TextStyle(fontSize: 20.0),)),
+                          // DescriptionTextWidget(text: widget.videoName,),
+                          Expanded(child: Text(widget.videoName,style: TextStyle(fontSize: 18.0),)),
                         ],
                         ),
                         ),
