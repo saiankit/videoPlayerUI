@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:videoPlayerUI/screens/videoPlayScreen.dart';
+import 'package:videoPlayerUI/services/videoPlayer.dart';
+
 import 'package:videoPlayerUI/utilities/theme_style.dart';
 
 class VideoInfo extends StatefulWidget {

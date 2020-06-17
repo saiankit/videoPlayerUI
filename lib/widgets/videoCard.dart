@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:videoPlayerUI/screens/videoPlayScreen.dart';
+import 'package:videoPlayerUI/services/videoPlayer.dart';
 import 'package:videoPlayerUI/widgets/videoPage.dart';
 
 class VideoCard extends StatefulWidget {
@@ -33,21 +33,15 @@ class _VideoCardState extends State<VideoCard> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0)
               ),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      image: DecorationImage(
-                        image : NetworkImage('${widget.imageURL}'),
-                        fit: BoxFit.fill
-                        ),
+              child: Container(
+                height: 220.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  image: DecorationImage(
+                    image : NetworkImage('${widget.imageURL}'),
+                    fit: BoxFit.fill
                     ),
-                    child: Container(
-                      height: 220.0,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             Stack(
@@ -65,7 +59,6 @@ class _VideoCardState extends State<VideoCard> {
                               bottomRight: Radius.circular(15.0)
                               ),
                             ),
-                            padding: EdgeInsets.only(left:10.0,right: 10.0),
                           child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
