@@ -55,7 +55,6 @@ Future completeFetch() async{
   );
   print(len.toString());
   }
-  
 }
 Future fetchVideos() async {
   cron.schedule(new Schedule.parse('*/360 * * * *'), () async {
