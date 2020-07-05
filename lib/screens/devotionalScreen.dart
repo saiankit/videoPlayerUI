@@ -11,7 +11,8 @@ class _DevotionalScreenState extends State<DevotionalScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListGenerator(channelID:devotionalChannelID,dbCollectionName:'devotionalChannel')
-    );
+        child: ListGenerator(
+            channelID: devotionalChannelID,
+            dbCollectionName: 'devotionalChannel'));
   }
 }
