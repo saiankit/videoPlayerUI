@@ -54,13 +54,11 @@ class VideoFetch {
           .collection(dbCollectionName)
           .getDocuments()
           .then((QuerySnapshot docs) => docs.documents.length);
-      print(len.toString());
     }
   }
 
   Future fetchVideos() async {
     cron.schedule(new Schedule.parse('*/360 * * * *'), () async {
-      // print('LOL');
       var apiURL =
           'https://www.googleapis.com/youtube/v3/search?key=$authKey&channelId=$channelID&part=snippet,id&order=date&maxResults=20';
       var jsonData;
