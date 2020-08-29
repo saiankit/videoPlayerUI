@@ -1,2 +1,4 @@
 # lib/utilities/keys.dart
-build/ios/Debug-iphonesimulator/FirebaseFirestore/FirebaseFirestore.framework/FirebaseFirestore
+build/ios/Debug-iphonesimulator
+build/app/outputs
+build/ios/iphonesimulator/Runner.app
