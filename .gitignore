@@ -76,4 +76,4 @@ app.*.map.json
 .atom/
 .buildlog/
 .history
-.svn/
+.svn/build/
